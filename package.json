@@ -1,0 +1,33 @@
+{
+  "name": "MySqlNodeExpressAPI",
+  "version": "1.0.0",
+  "description": "Sample project to implement api with node and express js\r https://dev.to/juliest88/how-to-build-rest-api-with-nodejs-express-and-mysql-31jk",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christianRibig5/MySqlNodeExpressAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christianRibig5/MySqlNodeExpressAPI/issues"
+  },
+  "homepage": "https://github.com/christianRibig5/MySqlNodeExpressAPI#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql-migrations": "^1.0.7",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
