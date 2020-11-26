@@ -15,17 +15,21 @@ module.exports = {
               unique:true,
               allowNull: false
         },
-        verificationCode:Sequelize.STRING,
-        verificationStatus:Sequelize.INTEGER,
-        expirationTimeInSeconds:Sequelize.INTEGER,
+        verification_code:Sequelize.STRING,
+        verification_status:Sequelize.INTEGER,
+        expiration_time_in_seconds:Sequelize.INTEGER,
         expired:Sequelize.INTEGER,
-        createdAt: {
-          allowNull:false,
-          type:Sequelize.DATE
+        created_at:{
+                  allowNull:false,
+                  type:Sequelize.DATE,
+                  defaultValue:Sequelize.literal('CURRENT_TIMESTAMP')
         },
-        updatedAt: {
-          allowNull:false,
-          type: Sequelize.DATE
+        updated_at:{
+                  allowNull:false,
+                  type: Sequelize.DATE,
+                  defaultValue:Sequelize.literal(
+                    'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
+                  )
         }
 
     });

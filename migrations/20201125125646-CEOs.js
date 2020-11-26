@@ -10,8 +10,8 @@ module.exports = {
                   primaryKey:true,
                   allowNull:false
               }, 
-              ceoIdRef:Sequelize.STRING,
-              userId:{
+              ceo_id_ref:Sequelize.STRING,
+              user_id:{
                 type:Sequelize.INTEGER,
                 allowNull:false,
                 references:{
@@ -19,21 +19,25 @@ module.exports = {
                     key:'id'
                 }
               },
-              companyName:{
+              company_name:{
                 type:Sequelize.STRING,
                 allowNull:false,
                 unique:true
               },
               year:Sequelize.STRING,
-              companyHeadquarters:Sequelize.STRING,
-              whatCompanyDoes:Sequelize.STRING,
-              createdAt: {
+              company_headquarters:Sequelize.STRING,
+              what_company_does:Sequelize.STRING,
+              created_at: {
                 allowNull:false,
-                type:Sequelize.DATE
+                type:Sequelize.DATE,
+                defaultValue:Sequelize.literal('CURRENT_TIMESTAMP')
               },
-              updatedAt: {
+              updated_at: {
                 allowNull:false,
-                type: Sequelize.DATE
+                type: Sequelize.DATE,
+                defaultValue:Sequelize.literal(
+                  'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
+                  )
               }
           });
      

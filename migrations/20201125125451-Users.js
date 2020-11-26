@@ -10,7 +10,7 @@ module.exports = {
             primaryKey:true,
             allowNull: false
         },
-        userIdRef:Sequelize.STRING,
+        user_id_ref:Sequelize.STRING,
         firstname:{
               type:Sequelize.STRING,
               allowNull:false
@@ -24,8 +24,11 @@ module.exports = {
               unique:true,
               allowNull: false
         },
-        password:Sequelize.STRING,
-        roleId:{
+        password:{
+          type:Sequelize.STRING,
+          allowNull:false
+        },
+        role_id:{
           type:Sequelize.INTEGER,
           allowNull:false,
 
@@ -35,7 +38,7 @@ module.exports = {
           }
         },
         gender:Sequelize.STRING,
-        avatarPath:Sequelize.STRING,
+        avatar_path:Sequelize.STRING,
         phone:{
                type:Sequelize.STRING,
                unique:true
@@ -44,13 +47,17 @@ module.exports = {
         state:Sequelize.STRING,
         city:Sequelize.STRING,
         address:Sequelize.TEXT,
-        createdAt: {
-          allowNull:false,
-          type:Sequelize.DATE
+        created_at:{
+                    allowNull:false,
+                    type:Sequelize.DATE,
+                    defaultValue:Sequelize.literal('CURRENT_TIMESTAMP')
         },
-        updatedAt: {
-          allowNull:false,
-          type: Sequelize.DATE
+        updated_at:{
+                  allowNull:false,
+                  type: Sequelize.DATE,
+                  defaultValue:Sequelize.literal(
+                    'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
+                  )
         }
 
     });
