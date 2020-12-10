@@ -9,3 +9,5 @@ https://medium.com/@prajramesh93/getting-started-with-node-express-and-mysql-usi
 
 eg to create a migration file we write on the cli :  
 sequelize model:create --name EmailVerification --attributes email:string,verification_code:string,verification_status:integer,expiration_time_in_seconds:integer,expired:integer
+
+To run migration Execute on command line $: sequelize db:migrate
