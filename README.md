@@ -15,5 +15,36 @@ To run migration Execute on command line $: sequelize db:migrate
 Heroku Hosting documentation:
 https://devcenter.heroku.com/start
 
-**Database Running Seed for settup data**
+**Database Running Seed for settup data**:
+sequelize seed:create --name my-seed-name
 npx sequelize-cli db:seed:all
+
+**example after running seed:**
+'use strict';
+const { v4: uuidv4 } = require("uuid");
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+     return queryInterface.bulkInsert('PaymentMethods', [
+      {
+        id:uuidv4(),
+        name: 'cash',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id:uuidv4(),
+        name: 'card',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }
+
+    ]); 
+    
+    
+  },
+
+  down: async (queryInterface, Sequelize) => {
+     return queryInterface.bulkDelete('PaymentMethods', null, {});
+    
+  }
+};
