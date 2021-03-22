@@ -14,3 +14,6 @@ To run migration Execute on command line $: sequelize db:migrate
 
 Heroku Hosting documentation:
 https://devcenter.heroku.com/start
+
+**Database Running Seed for settup data**
+npx sequelize-cli db:seed:all
